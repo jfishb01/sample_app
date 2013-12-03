@@ -3,6 +3,11 @@ class Micropost < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   validates :content, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true
+  # has_attached_file :pdf, styles: {thumbnail: "60x60#"}
+  # validates_attachment :pdf, :presence => true,
+  #  :content_type => { :content_type => "application/pdf",
+  #                     :message => "only pdf files are allowed" },
+  #  :size => { :in => 0..500.kilobytes }
 
   # Returns microposts from the users being followed by the given user.
   def self.from_users_followed_by(user)

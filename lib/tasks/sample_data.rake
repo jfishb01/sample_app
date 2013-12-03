@@ -26,9 +26,11 @@ end
 
 def make_microposts
   users = User.all(limit: 6)
-  50.times do
+  50.times do |i|
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
+    # pdf = File.open('C:\Users\jfish01\rails\test.pdf')
+    # users.each { |user| user.microposts.create!(content: content, pdf: pdf) }
   end
 end
 
