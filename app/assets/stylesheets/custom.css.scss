@@ -197,7 +197,10 @@ input {
   }
 }
 .content {
-  display: block;
+  white-space: nowrap;
+}
+.pdf {
+  white-space: nowrap;
 }
 .timestamp {
   color: $grayLight;
